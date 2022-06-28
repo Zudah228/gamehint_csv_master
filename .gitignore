@@ -7,3 +7,6 @@ lib/
 # variables
 _import/*
 !_import/.gitkeep
+
+# .env
+.env
