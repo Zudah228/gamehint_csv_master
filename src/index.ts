@@ -1,8 +1,7 @@
-import { ChallongeRepository }
-  from "./domain/repositories/challonge/ChallongeRepository.js";
-import { Csv } from "./domain/repositories/game_hint/Csv.js";
+import { Csv } from "./domain/repositories/game_hint/Csv";
 import path from "path";
-import { GamehintParticipant } from "./domain/entities/gamehint/Participant.js";
+import { GamehintParticipant } from "./domain/entities/gamehint/Participant";
+import { TournamentRepository } from "./domain/repositories/challonge/TournamentRepository";
 
 async function run() {
   const csv = new Csv<GamehintParticipant>(
@@ -10,7 +9,7 @@ async function run() {
 
   console.log(csv.indices[0].申し込み日時);
 
-  const result = await new ChallongeRepository().getAllTournaments();
+  const result = await new TournamentRepository().getAllTournaments();
 
   console.log(result[0]);
 }

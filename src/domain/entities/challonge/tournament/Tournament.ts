@@ -1,4 +1,4 @@
-import { State, RankedBy, TournamentType } from "./types.js";
+import { State, RankedBy, TournamentType } from "./types";
 
 export type Tournament = {
   tournament: {
