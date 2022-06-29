@@ -1,14 +1,14 @@
-const STATE = {
+export const TOURNAMENT_STATE = {
   all: "all",
   pending: "pending",
   inProgress: "in_progress",
   ended: "ended",
-};
+} as const;
 
-export type State = typeof STATE[keyof typeof STATE]
+export type TournamentState =
+  typeof TOURNAMENT_STATE[keyof typeof TOURNAMENT_STATE];
 
-
-const TOURNAMENT_TYPE = {
+export const TOURNAMENT_TYPE = {
   singleEl: "single elimination",
   doubleEl: "double elimination",
   roundRobin: "round robin",
@@ -16,15 +16,14 @@ const TOURNAMENT_TYPE = {
 } as const;
 
 export type TournamentType =
-  typeof TOURNAMENT_TYPE[keyof typeof TOURNAMENT_TYPE]
+  typeof TOURNAMENT_TYPE[keyof typeof TOURNAMENT_TYPE];
 
-
-const RANKED_BY = {
+export const RANKED_BY = {
   matchWin: "match wins",
   gameWins: "game wins",
   pointsScored: "points scored",
   pointsDifference: "points difference",
   custom: "custom",
-};
+} as const;
 
-export type RankedBy = typeof RANKED_BY[keyof typeof RANKED_BY]
+export type RankedBy = typeof RANKED_BY[keyof typeof RANKED_BY];
